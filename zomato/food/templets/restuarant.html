@@ -1,0 +1,13 @@
+<h1>{{ restaurant.name }}</h1>
+<a href="{% url 'home' %}">← Back to Restaurants</a>
+
+{% if menu %}
+    {% for item in menu %}
+        <div>
+            <h3>{{ item.item_name }}</h3>
+            <p>₹{{ item.price }}</p>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>No menu items available.</p>
+{% endif %}
